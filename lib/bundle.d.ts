@@ -3,7 +3,6 @@ declare global {
         loadMathJax: Function;
         markdownToHTML: Function;
         render: Function;
-        mmdYamlToHTML: Function;
         renderTitleMmd: Function;
         renderAuthorsMmd: Function;
     }

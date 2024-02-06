@@ -2,6 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
 const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const config = {
   // TODO: Add common Configuration
@@ -98,6 +99,16 @@ const bundleConfig = Object.assign({}, config,{
   plugins: [
     new NodePolyfillPlugin({
       excludeAliases: ["console"]
+    }),
+    new BundleAnalyzerPlugin({
+         analyzerMode: 'static',
+         reportFilename: 'report.html',
+         defaultSizes: 'parsed',
+         openAnalyzer: false,
+         generateStatsFile: false,
+         statsFilename: 'stats.json',
+         statsOptions: null,
+         logLevel: 'info'
     })
   ],
 });
@@ -148,4 +159,4 @@ const contextMenuConfig = Object.assign({}, config,{
 });
 
 // Return Array of Configurations
-module.exports = [ indexConfig, bundleConfig, contextMenuConfig ];
+module.exports = [ bundleConfig ];

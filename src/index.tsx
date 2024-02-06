@@ -6,7 +6,6 @@ import {
 
 import {
   mdPluginMathJax,
-  mdPluginHighlightCode,
   mdPluginText,
   mdPluginTOC,
   mdPluginAnchor,
@@ -52,7 +51,7 @@ export {
   mdLatexFootnotes,
   mdSetPositionsAndHighlight,
   initMathpixMarkdown,
-  mdPluginMathJax, mdPluginHighlightCode, mdPluginText, mdPluginTOC, mdPluginAnchor, mdPluginTableTabular, mdPluginList, mdPluginChemistry,
+  mdPluginMathJax, mdPluginText, mdPluginTOC, mdPluginAnchor, mdPluginTableTabular, mdPluginList, mdPluginChemistry,
   TMarkdownItOptions, optionsMathpixMarkdown, TOutputMath, TOutputMathJax, THtmlSanitize,
   ISmilesOptions,
   resetTheoremEnvironments,

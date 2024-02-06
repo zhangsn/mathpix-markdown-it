@@ -6,7 +6,6 @@ import { rest_mmd_footnotes_list } from './md-latex-footnotes/utils';
 
 import {
   mdPluginMathJax,
-  mdPluginHighlightCode,
   mdPluginText,
   mdPluginTOC,
   mdPluginAnchor,
@@ -70,7 +69,6 @@ export const mathpixMarkdownPlugin = (md: MarkdownIt, options) => {
     .use(mdPluginMathJax({}))
     .use(mdPluginText())
     .use(mdLatexFootnotes)
-    .use(mdPluginHighlightCode, codeHighlight)
     .use(mdPluginAnchor)
     .use(mdPluginTOC, {toc: toc});
 

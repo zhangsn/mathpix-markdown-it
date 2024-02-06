@@ -6,7 +6,6 @@ export declare const mdPluginMathJax: (options: any) => (md: any) => void;
  * configured custom tag plugin
  */
 export declare const mdPluginText: () => (md: MarkdownIt) => void;
-export declare const mdPluginHighlightCode: (md: any, opts: any) => void;
 export declare const mdPluginTOC: (md: MarkdownIt, opts: any) => void;
 export declare const mdPluginAnchor: {
     (md: MarkdownIt, opts: any): void;

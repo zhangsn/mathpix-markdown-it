@@ -9,7 +9,6 @@ import { listsStyles } from "../styles/styles-lists";
 import {MathJax} from '../mathjax';
 import { Property } from 'csstype'; // at top of file
 import { ISmilesOptions } from '../markdown/md-chemistry';
-import { yamlParser } from '../yaml-parser';
 import { generateHtmlPage } from './html-page';
 import { getMaxWidthStyle } from '../styles/halpers';
 import { parseMarkdownByElement } from '../helpers/parse-mmd-element';
@@ -549,31 +548,7 @@ class MathpixMarkdown_Model {
         );
     };
 
-  mmdYamlToHTML = (mmd: string, options: TMarkdownItOptions = {}, isAddYamlToHtml = false) => {
-    try {
-      MathJax.Reset();
-      const { isDisableFancy = false } = options;
-      const disableRules = isDisableFancy ? this.disableFancyArrayDef : options ? options.disableRules || [] : [];
-      this.setOptions(disableRules);
-
-      const { metadata, content, error = ''} = yamlParser(mmd, isAddYamlToHtml);
-      let html = this.render(content, options);
-      if (html.indexOf('clickable-link') !== -1) {
-        html = this.checkEquationNumber(html);
-      }
-      return {
-        html: html,
-        metadata: metadata,
-        content: content,
-        error: error
-      }
-
-    } catch (err) {
-      console.log('ERROR => [mmdYamlToHTML] =>' + err);
-      console.error(err);
-      return null
-    }
-  }
+  
 
   renderTitleMmd = (title: string, options: TMarkdownItOptions = {}, className = 'article-title', isOnlyInner = false): string => {
     try {

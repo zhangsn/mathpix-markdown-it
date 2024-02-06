@@ -1,13 +1,11 @@
 import SmilesDrawer from './smiles-drawer';
 import { IOptions } from './smiles-drawer/src/Drawer';
 import { ISmilesOptions } from './index';
-import { initDocument } from '../dom-adaptor';
 import { setFontSize, setDisableColors, setThemesByDefault, getScale } from './chemistry-options';
 
 export const ChemistryDrawer = {
   drawSvgSync: function(content: string, id: string,
                         options: ISmilesOptions = {}): string {
-    initDocument();
     const { theme = 'light', stretch, fontSize = 14,
       disableColors = true, autoScale, useCurrentColor = true
     } = options;

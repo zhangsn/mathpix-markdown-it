@@ -10,8 +10,6 @@ const mdInit = (options: TMarkdownItOptions) => {
   const {htmlTags = false, xhtmlOut = false, width = 1200, breaks = true, typographer = true, linkify = true,
           outMath = {}, mathJax = {}, renderElement = {},
           lineNumbering = false, startLine = 0, htmlSanitize = true, smiles = {}, forDocx = false, openLinkInNewWindow =  true,
-    isDisableEmoji=false,
-    isDisableEmojiShortcuts=false,
     isDisableRefs = false,
     isDisableFootnotes = false,
     maxWidth = '',
@@ -78,13 +76,6 @@ const mdInit = (options: TMarkdownItOptions) => {
     .use(mdPluginCollapsible)
     .use(require("markdown-it-ins"));
 
-  if (!isDisableEmoji) {
-    if (isDisableEmojiShortcuts) {
-      md.use(require("markdown-it-emoji"), { shortcuts: {} })
-    } else {
-      md.use(require("markdown-it-emoji"))
-    }
-  }
   if (isDisableRefs) {
     md.disable(['refs', 'refsInline'])
   }  
